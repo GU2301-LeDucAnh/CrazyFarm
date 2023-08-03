@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd061adf52dc8042b263effe3d178f2, type: 3}
+  m_Name: PlantData
+  m_EditorClassIdentifier: 
+  lstPlant:
+  - idPlant: 0
+    coinSpent: 10
+    playerLvCanUlock: 1
+    iconPlant: {fileID: 21300000, guid: f506dab6a23bbbc45b4950a2df691853, type: 3}
+    smallPlant: {fileID: 100000, guid: 73657201110f40f4b93f7306ef507a80, type: 3}
+    mediumPlant: {fileID: 100000, guid: 5e9b247c700af4a4dae9cab449139258, type: 3}
+    bigPlant: {fileID: 100000, guid: dc7d9833d44b2b742a8bdb7ffb692929, type: 3}
+    timeToHarvest: 0.5
+    rewards:
+      coinCollect: 20
+      expCollect: 10
+      plantCollect: 10
+  - idPlant: 1
+    coinSpent: 20
+    playerLvCanUlock: 2
+    iconPlant: {fileID: 21300000, guid: d16eea585d3648b409d63d970bb8ba2a, type: 3}
+    smallPlant: {fileID: 100000, guid: 73657201110f40f4b93f7306ef507a80, type: 3}
+    mediumPlant: {fileID: 100000, guid: 5e9b247c700af4a4dae9cab449139258, type: 3}
+    bigPlant: {fileID: 100000, guid: b577e90732d260e4998944f5e3bb4e8b, type: 3}
+    timeToHarvest: 1
+    rewards:
+      coinCollect: 30
+      expCollect: 20
+      plantCollect: 20
+  - idPlant: 2
+    coinSpent: 30
+    playerLvCanUlock: 3
+    iconPlant: {fileID: 21300000, guid: 6ff59c85aa8273d4b8d8cf9d6ef0beaf, type: 3}
+    smallPlant: {fileID: 100000, guid: 8db2074ac18fe754db936e76136c89b5, type: 3}
+    mediumPlant: {fileID: 100000, guid: 8db2074ac18fe754db936e76136c89b5, type: 3}
+    bigPlant: {fileID: 100000, guid: 5af58673dd95ef2488b28476b76ffa45, type: 3}
+    timeToHarvest: 1.5
+    rewards:
+      coinCollect: 40
+      expCollect: 30
+      plantCollect: 30

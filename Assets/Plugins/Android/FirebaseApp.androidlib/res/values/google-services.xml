@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">389010668281</string>
+  <string name="google_storage_bucket" translatable="false">learning-vtiacademy.appspot.com</string>
+  <string name="project_id" translatable="false">learning-vtiacademy</string>
+  <string name="google_api_key" translatable="false">AIzaSyDg3djEWv1cIm8TuEJl_FqCX35fLwyIo2A</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDg3djEWv1cIm8TuEJl_FqCX35fLwyIo2A</string>
+  <string name="google_app_id" translatable="false">1:389010668281:android:cd731be9097a9a79588028</string>
+  <string name="default_web_client_id" translatable="false">389010668281-gbs176a48mc98a0dag7odt5jqplb1glt.apps.googleusercontent.com</string>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "389010668281",
+    "project_id": "learning-vtiacademy",
+    "storage_bucket": "learning-vtiacademy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:389010668281:android:cd731be9097a9a79588028",
+        "android_client_info": {
+          "package_name": "com.UnityTechnologies.com.unity.template.urpblank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "389010668281-gbs176a48mc98a0dag7odt5jqplb1glt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg3djEWv1cIm8TuEJl_FqCX35fLwyIo2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "389010668281-gbs176a48mc98a0dag7odt5jqplb1glt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
