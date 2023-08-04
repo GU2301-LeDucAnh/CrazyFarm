@@ -7,12 +7,6 @@ using UnityEngine;
 public class TreeData : ScriptableObject
 {
     public List<TreeInfo> lstTree;
-
-    public TreeInfo CurrentTree(int idTree)
-    {
-        TreeInfo curPlant = lstTree.Find(x => x.idTree == idTree);
-        return curPlant;
-    }
 }
 
 [Serializable]
@@ -22,6 +16,8 @@ public class TreeInfo
     public int coinSpent;
     public int playerLvCanUlock;
     public Sprite iconTree;
+    public Mesh nonClaimMesh;
+    public Mesh canClaimMesh;
 
     public float timeToHarvest;
     public TreeRewards rewards;

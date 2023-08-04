@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
 
     public MusicManager musicManager;
-    public FirebaseManager firebaseManager;
+    //public FirebaseManager firebaseManager;
     public UserProfile userProfile;
     public DataManager dataManager;
     public PlayerProfile playerProfile;
@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
     {
         musicManager.Init();
         //firebaseManager.Init();
-        playerProfile.Init(firebaseManager);
+        playerProfile.Init(/*firebaseManager*/);
     }
 
     public void LoadScene(string sceneName)

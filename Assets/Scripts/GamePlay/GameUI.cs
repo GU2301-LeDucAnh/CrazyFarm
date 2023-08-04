@@ -11,6 +11,7 @@ public class GameUI : MonoBehaviour
     public Button shopBtn;
     public TextMeshProUGUI txtAttachBtn;
     public TextMeshProUGUI playerName;
+    public Image curExp;
     public TextMeshProUGUI playerLv;
     public TextMeshProUGUI coinTxt;
     public Button collectionBtn;
@@ -61,7 +62,7 @@ public class GameUI : MonoBehaviour
     public void Init()
     {
         playerName.text = UserProfile.PlayerName;
-        ChangeTxtPlayerLv();
+        ChangeTxtPlayerLv(GameController.Instance.dataManager.playerLevelData.GetLastExp());
         ChangTxtCoin();
         ChangeTxtCollection();
 
@@ -100,9 +101,10 @@ public class GameUI : MonoBehaviour
         }
     }
 
-    public void ChangeTxtPlayerLv()
+    public void ChangeTxtPlayerLv(int lastExp)
     {
         playerLv.text = UserProfile.CurrentLevel.ToString();
+        curExp.fillAmount = (float) UserProfile.CurrentExp / (float) lastExp;
     }
 
     public void ChangTxtCoin()

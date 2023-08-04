@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,7 @@ public class ShopController : MonoBehaviour
 
     public static ShopController Instance;
 
-    private List<PlantItem> lstBtnSelectPlant = new List<PlantItem>();
+    public List<PlantItem> lstBtnSelectPlant = new List<PlantItem>();
     private List<PlayerSkinItem> lstBtnSelectPlayerSkin;
 
     public static ShopController Setup()
@@ -27,9 +28,9 @@ public class ShopController : MonoBehaviour
 
     public void Show()
     {
+        gameObject.SetActive(true);
         tabPlant.ShowTab();
         tabPlant.btnTab.onClick.Invoke();
-        //lsTab.tabPlayerSkin.HideTab();
         closeBtn.onClick.AddListener(ClosePanel);
     }
 
@@ -39,18 +40,26 @@ public class ShopController : MonoBehaviour
         for (int i = 0; i < lstPlant.Count; i++)
         {
             var btnSelectPlant = Instantiate(tabPlant.plantElement.gameObject, scrollViewContentShop.transform).GetComponent<PlantItem>();
-            btnSelectPlant.Init(lstPlant[i]);
             lstBtnSelectPlant.Add(btnSelectPlant);
+            btnSelectPlant.Init(lstPlant[i]);
         }
+        tabPlant.btnTab.onClick.RemoveAllListeners();
     }
 
     public void PlantHideTab()
     {
-        for (int i = 0; i < lstBtnSelectPlant.Count; i++)
+        foreach (PlantItem btnPlant in lstBtnSelectPlant)
         {
-            Destroy(lstBtnSelectPlant[i]);
-            lstBtnSelectPlant.Remove(lstBtnSelectPlant[i]);
+            Destroy(btnPlant.gameObject);
         }
+        StartCoroutine(enumerator());
+        tabPlant.btnTab.onClick.RemoveAllListeners();
+    }
+
+    IEnumerator enumerator()
+    {
+        yield return new WaitForEndOfFrame();
+        lstBtnSelectPlant.RemoveAll(item => item == null);
     }
 
     public void PlayerSkinShowTab()
@@ -77,6 +86,7 @@ public class ShopController : MonoBehaviour
     public void ClosePanel()
     {
         gameObject.SetActive(false);
+        tabPlant.btnTab.onClick.AddListener(tabPlant.HideTab);
     }
 }
 

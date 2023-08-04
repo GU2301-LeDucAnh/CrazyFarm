@@ -2375,6 +2375,7 @@ MonoBehaviour:
   scrollViewContentShop: {fileID: 8820332349022732538}
   closeBtn: {fileID: 8820332349064241399}
   itemInfo: {fileID: 8820332349534521874}
+  lstBtnSelectPlant: []
 --- !u!1 &8820332349385725082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2701,7 +2702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 8820332349022732537}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1

@@ -17,8 +17,21 @@ MonoBehaviour:
     coinSpent: 2
     playerLvCanUlock: 1
     iconTree: {fileID: 0}
+    nonClaimMesh: {fileID: 4300000, guid: 519d57632eb829245b70ef6e3855e29b, type: 3}
+    canClaimMesh: {fileID: 4300000, guid: be21c7727ad33c54e898bd819f114a21, type: 3}
     timeToHarvest: 0.5
     rewards:
       coinCollect: 2
       expCollect: 1
       treeCollect: 5
+  - idTree: 1
+    coinSpent: 4
+    playerLvCanUlock: 2
+    iconTree: {fileID: 0}
+    nonClaimMesh: {fileID: 4300000, guid: bb000438877a4f747a3a127eb42bd88c, type: 3}
+    canClaimMesh: {fileID: 4300000, guid: 3d638fd08a2602c44915c12fcf55cd37, type: 3}
+    timeToHarvest: 1
+    rewards:
+      coinCollect: 4
+      expCollect: 2
+      treeCollect: 10

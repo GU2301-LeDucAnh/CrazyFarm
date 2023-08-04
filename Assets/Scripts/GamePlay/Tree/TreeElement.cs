@@ -7,6 +7,7 @@ public class TreeElement : MonoBehaviour
 {
     public int id;
     //public GameObject uICanCollect;
+    private MeshFilter meshFilter;
 
     private TreeInfo treeInfo;
     private DateTime timeToHavert;
@@ -26,6 +27,7 @@ public class TreeElement : MonoBehaviour
 
     public void InitState()
     {
+        meshFilter = gameObject.GetComponent<MeshFilter>();
         foreach (TreeInfo treeInfo in GameController.Instance.dataManager.treeData.lstTree)
         {
             if (this.id == treeInfo.idTree)
@@ -34,6 +36,7 @@ public class TreeElement : MonoBehaviour
             }
         }
         timeToHavert = CalculatorTimeHavert(treeInfo);
+        meshFilter.mesh = treeInfo.nonClaimMesh;
         //uICanCollect.SetActive(false);
         StartCoroutine(ClaimTree());
     }
@@ -48,7 +51,6 @@ public class TreeElement : MonoBehaviour
 
     private IEnumerator ClaimTree()
     {
-        Debug.LogError(timeToHavert.ToString());
         if (UnbiasedTime.Instance.Now() <= timeToHavert)
         {
             yield return new WaitForSeconds(1);
@@ -57,9 +59,8 @@ public class TreeElement : MonoBehaviour
         else
         {
             isCanClaim = true;
-            Debug.LogError(IsCanClaim);
+            meshFilter.mesh = treeInfo.canClaimMesh;
         }
-        //uICanCollect.SetActive(true);
     }
 
     public void CanClaim()
@@ -68,13 +69,10 @@ public class TreeElement : MonoBehaviour
         UserProfile.CurrentExp += treeInfo.rewards.expCollect;
         UserProfile.CurrentTreeCollection += treeInfo.rewards.treeCollect;
 
-        GamePlayController.Instance.gameScene.ChangeTxtPlayerLv();
-        GamePlayController.Instance.gameScene.ChangTxtCoin();
-        GamePlayController.Instance.gameScene.ChangeTxtCollection();
+        StartCoroutine(GameController.Instance.playerProfile.CheckExpForNextLv());
 
-        //uICanCollect.SetActive(false);
         isCanClaim = false;
+        meshFilter.mesh = treeInfo.nonClaimMesh;
         InitState();
-        Debug.LogError(IsCanClaim);
     }
 }

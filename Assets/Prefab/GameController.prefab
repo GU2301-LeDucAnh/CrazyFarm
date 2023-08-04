@@ -91,6 +91,7 @@ MonoBehaviour:
   skinData: {fileID: 11400000, guid: 4dada434aa642f34a8a9ee697e573682, type: 2}
   plantData: {fileID: 11400000, guid: c112e2d3924f17441bbcdaf84ec3677c, type: 2}
   treeData: {fileID: 11400000, guid: f89cfd525fe16b34d8ac3780101d154a, type: 2}
+  playerLevelData: {fileID: 11400000, guid: 7963b7dc84a77ed46ba2550e0c5de77c, type: 2}
 --- !u!1 &3380737155223492448
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +556,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicManager: {fileID: 8658084520875675327}
-  firebaseManager: {fileID: 5984392939206366787}
   userProfile: {fileID: 5709170212136400513}
   dataManager: {fileID: 2260372498396557798}
   playerProfile: {fileID: 4599875298165073262}

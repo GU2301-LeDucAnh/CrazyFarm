@@ -14,12 +14,14 @@ public class PlantItem : ShopItem
         iconItem.sprite = plantInfo.iconPlant;
         curBtn.onClick.AddListener(ChangeInfo);
         if (plantInfo.idPlant == 0)
+        {
+            curBtn.Select();
             ChangeInfo();
+        }
     }
 
     public override void ChangeInfo()
     {
-        curBtn.targetGraphic.GetComponent<Image>().sprite = selectedImg;
         ShopController.Setup().itemInfo.Init(plantInfo);
     }
 }

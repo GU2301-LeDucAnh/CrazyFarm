@@ -99,9 +99,7 @@ public class EmptyDirt : MonoBehaviour
         UserProfile.CurrentExp += curPlantInfo.rewards.expCollect;
         UserProfile.CurrentPlantCollection += curPlantInfo.rewards.plantCollect;
 
-        GamePlayController.Instance.gameScene.ChangeTxtPlayerLv();
-        GamePlayController.Instance.gameScene.ChangTxtCoin();
-        GamePlayController.Instance.gameScene.ChangeTxtCollection();
+        StartCoroutine(GameController.Instance.playerProfile.CheckExpForNextLv());
 
         Destroy(curPlantGO);
         dirtState = DirtState.EmptyDirt;

@@ -9,7 +9,22 @@ public class UserProfile : MonoBehaviour
         get
         {
             if (!PlayerPrefs.HasKey(StringHelper.PLAYER_NAME))
-                PlayerPrefs.SetString(StringHelper.PLAYER_NAME, "Player");
+            {
+                var deviceName = SystemInfo.deviceUniqueIdentifier;
+                var lastFiveName = SystemInfo.deviceUniqueIdentifier.Length - 4;
+                for (int i = 0; i < SystemInfo.deviceUniqueIdentifier.Length; i++)
+                {
+                    if (i == lastFiveName - 1)
+                    {
+                        deviceName = SystemInfo.deviceUniqueIdentifier[i].ToString();
+                    }
+                    else if (i > lastFiveName - 1)
+                    {
+                        deviceName += SystemInfo.deviceUniqueIdentifier[i].ToString();
+                    }
+                }
+                PlayerPrefs.SetString(StringHelper.PLAYER_NAME, "User#" + deviceName);
+            }
             return PlayerPrefs.GetString(StringHelper.PLAYER_NAME);
         }
         set

@@ -76,14 +76,12 @@ public class GamePlayController : MonoBehaviour
             gameScene.attachBtn.onClick.AddListener(() => {
                 treeElement.CanClaim();
             });
-            Debug.LogError("dzo true");
         }
         else
         {
             gameScene.txtAttachBtn.text = "";
             gameScene.attachBtn.gameObject.SetActive(false);
             gameScene.attachBtn.onClick.RemoveAllListeners();
-            Debug.LogError("dzo !true");
         }
     }
 

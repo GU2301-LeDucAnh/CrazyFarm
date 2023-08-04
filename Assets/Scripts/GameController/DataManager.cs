@@ -7,4 +7,5 @@ public class DataManager : MonoBehaviour
     public SkinData skinData;
     public PlantData plantData;
     public TreeData treeData;
+    public PlayerLevelData playerLevelData;
 }
